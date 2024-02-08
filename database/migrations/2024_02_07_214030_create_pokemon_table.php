@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('pokemons', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("url");
+            $table->string("type1");
+            $table->string("type2");
+            $table->string("atack1");
+            $table->string("atack2");
+            $table->string("img");
             $table->timestamps();
         });
     }

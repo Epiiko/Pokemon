@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\PokemonResource;
+use App\Models\Pokemon;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::get('/pokemons', function(){
+    return PokemonResource::collection(Pokemon::all());
 });
